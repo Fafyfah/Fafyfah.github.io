@@ -11,6 +11,8 @@ Demo repository
 * bulltet point
 * bullet point 2
 
-Hellooooooooooo
+Add a new change.
 
-asdhfhdlfk;asdfk
+# Visualization
+
+![Figure of unemployment rate](figure/plot1.png)
