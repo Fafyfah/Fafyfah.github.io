@@ -1,0 +1,153 @@
+/* color & font */
+:root {
+  --bg: #f5f1ea;        
+  --frame: #15130f;     
+  --pill: #b7ac9c;      
+  --pill-text: #1a1a1a; 
+  --text: #1a1a1a;      
+  --active: #7c5cfc;    /* purple outline for active nav */
+}
+
+/* reset default margins/padding to elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--frame);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* page frame - probably remove later? */
+.page-frame {
+  background: var(--bg);
+  width: 100%;
+  max-width: 900px;
+  min-height: calc(100vh - 48px);
+  border-radius: 4px;
+  padding: 32px 48px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* navigation pill */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.pill {
+  background: var(--pill);
+  color: var(--pill-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 999px; /* large radius = fully rounded pill shape */
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+}
+
+/* outline for active page's pill */
+.pill.active {
+  outline: 3px solid var(--active);
+  outline-offset: 2px;
+}
+
+/* home page layout (sidebar + content) */
+.home-layout {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* sidebar drop below content on narrow screens */
+  flex: 1;
+}
+
+.profile-card {
+  background: var(--pill);
+  width: 220px;
+  border-radius: 24px;
+  padding: 24px 16px;
+  text-align: center;
+  height: fit-content;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 auto 20px;
+}
+
+.profile-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.profile-desc,
+.profile-contact {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.intro {
+  flex: 1;
+  min-width: 260px;
+}
+
+.intro h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.intro h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+.intro p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* page title */
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* to the top */
+.to-top {
+  margin: auto auto 0; /* pushes to the bottom of the flex column */
+  align-self: center;
+  text-align: center;
+}
+
+/* responsive - stack things on small screens */
+@media (max-width: 600px) {
+  .page-frame {
+    padding: 24px 20px 48px;
+  }
+  .profile-card {
+    width: 100%;
+  }
+}
