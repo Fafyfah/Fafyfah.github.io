@@ -1,6 +1,7 @@
 /* color & font */
 :root {
-  --bg: #f5f1ea;        
+  --bg: #f5f1ea; 
+  /* --bg; #fff; */
   --frame: #15130f;     
   --pill: #b7ac9c;      
   --pill-text: #1a1a1a; 
@@ -22,6 +23,15 @@ body {
   display: flex;
   justify-content: center;
   padding: 24px;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
 }
 
 /* page frame - probably remove later? */
@@ -137,6 +147,24 @@ body {
   letter-spacing: -0.5px;
 }
 
+.big {
+  font-size: 2.5em;
+}
+
+.small {
+  font-size: 1.25em;
+}
+
+section {
+margin-bottom: 2.5em;  /* We want a little more space between sections */
+  }
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
 /* to the top */
 .to-top {
   margin: auto auto 0; /* pushes to the bottom of the flex column */
@@ -152,4 +180,5 @@ body {
   .profile-card {
     width: 100%;
   }
+  
 }
