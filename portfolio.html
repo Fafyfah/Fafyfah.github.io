@@ -9,7 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- link to the vega-lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
 </head>
+  
 <body id="top">
   <div class="page-frame">
 
@@ -17,16 +24,61 @@
       <a href="index.html" class="pill">HOME</a>
       <a href="portfolio.html" class="pill active">Portfolio</a>
       <a href="projects.html" class="pill">Projects</a>
-      <a href="https://github.com/yourusername" class="pill" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/Fafyfah" class="pill" target="_blank" rel="noopener">GitHub</a>
     </nav>
 
     <main style="flex: 1;">
+      
       <h1 class="page-title">Portfolio</h1>
-      <!-- Add portfolio pieces here later — images, write-ups, links, etc. -->
+
+      <h1 class="big" style="margin-bottom: 0px;">
+        Your name
+      </h1>
+  
+      <h3 class="small"> 
+        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
+      </h3>
+
+      <section>
+        <div class="chart1-description">
+          <h2>Section 1: A basic chart</h2>
+          <p>
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+          </p>
+        </div>
+        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+      </section>
+
+      <section>
+        <div class="chart2-description">
+          <h2>Section 2: A basic chart</h2>
+          <p>
+                more charts
+          </p>
+        </div>
+        <figure id="Location3"></figure>
+      </section>
+  
+        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
+
+
+      <script>
+        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; 
+        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        let figure_3_spec = "chart2.json";
+        vegaEmbed('#Location3', figure_3_spec);
+
+
+ </script>
+  
+      
     </main>
 
     <a href="#top" class="pill to-top">To the top</a>
 
   </div>
+
+   
 </body>
 </html>
