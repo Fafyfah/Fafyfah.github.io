@@ -98,7 +98,8 @@ body {
 }
 
 .profile-desc,
-.profile-contact {
+.profile-contact,
+.example {
   font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 6px;
