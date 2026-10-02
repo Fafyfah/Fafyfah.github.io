@@ -41,49 +41,33 @@
 
       <section>
         <div class="chart1-description">
-          <h2>Section 1: A basic chart</h2>
+          <h2>Week 1: A basic chart</h2>
           <p>
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
+                Upload 3 basic charts from somewhere.
           </p>
         </div>
-        <figure id="Location1"></figure> <!-- Food CO2 -->
-      </section>
-      
-      <!-- chart_example1 -->
-      <section>
-        <div class="chart2-description">
-          <h2>Section 2: A basic chart</h2>
-          <p>
-                more charts
-          </p>
-        </div>
-        <figure id="Location2"></figure>
-      </section>
 
-      <!-- UK nuclear power -->
-      <section>
-        <div class="chart3-description">
-          <h2>Section 3: A basic chart</h2>
-          <p>
-                description
-          </p>
-        </div>
+        <h4>Chart A: Food-related Emissions</h4>
+        <p>description</p>
+        <figure id="Location1"></figure>
+        <p>credit</p>
+
+        <h4>Chart B: Decades of US Inflation Volatility</h4>
+        <p>description</p>
+        <figure id="Location2"></figure>
+        <p>credit</p>
+
+        <h4>Chart C: Nuclear Power</h4>
+        <p>description</p>
         <figure id="Location3"></figure>
+        <p>credit</p>
       </section>
-  
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
 
       <script>
-        let figure_1_spec = "food_co2.json"; 
-        vegaEmbed('#Location1', figure_1_spec)
-        let figure_2_spec = "chart_example1.vl.json";
-        vegaEmbed('#Location2', figure_2_spec);
-        // chart doesn't appear
-        let figure_3_spec = "nuclear_power.json";
-        vegaEmbed('#Location3', figure_3_spec);
+        vegaEmbed('#Location1', "food_co2.json")
+        vegaEmbed('#Location2', "chart_example1.vl.json");
+        vegaEmbed('#Location3', "nuclear_power.json");
       </script>
-  
       
     </main>
 
