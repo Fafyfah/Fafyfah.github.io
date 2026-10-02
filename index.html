@@ -3,93 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Name</title>
+  <title>Name — Website</title>
 
+  <!-- Google Font: Poppins, a bold geometric sans-serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- link to the vega-lite -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
 </head>
-  
+
 <body id="top">
   <div class="page-frame">
 
+    <!-- navigation -->
     <nav class="navbar">
-      <a href="index.html" class="pill">HOME</a>
-      <a href="portfolio.html" class="pill active">Portfolio</a>
+      <a href="index.html" class="pill active">Home</a>
+      <a href="portfolio.html" class="pill">Portfolio</a>
       <a href="projects.html" class="pill">Projects</a>
-      <a href="https://github.com/Fafyfah" class="pill" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/fafyfah" class="pill" target="_blank" rel="noopener">GitHub</a>
     </nav>
 
-    <main style="flex: 1;">
-      
-      <h1 class="page-title">Portfolio</h1>
+    <main class="home-layout">
 
-      <h1 class="big">
-        Your name
-      </h1>
-  
-      <h3 class="small"> 
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
-      </h3>
+      <!-- profile card -->
+      <aside class="profile-card">
+        <div class="avatar"></div>
+        <!-- img src="profile.jpg" alt="profile photo" class="avatar" -->
+        <p class="profile-name">FAH</p>
+        <p class="profile-name">Apichaya Rinnanont</p>
+        <p class="profile-desc">description</p>
+        <p class="profile-contact">a.rinnanont@lse.ac.uk</p>
+        <p class="example"> Just type something really long long long as an examle hahahahahhahahhahahahhahahha</p>
+      </aside>
 
-      <section>
-        <div class="chart1-description">
-          <h2>Section 1: A basic chart</h2>
-          <p>
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
-          </p>
-        </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-      </section>
-      
-      <!-- chart_example1 -->
-      <section>
-        <div class="chart2-description">
-          <h2>Section 2: A basic chart</h2>
-          <p>
-                more charts
-          </p>
-        </div>
-        <figure id="Location2"></figure>
+      <!-- main content -->
+      <section class="intro">
+        <h1>Data Science</h1>
+        <p>text text text</p>
+
+        <h2>Skills</h2>
+        <p>Python, machine learning, data visualization etc.</p>
+
+        <h2>Education</h2>
+        <p>text text</p>
+
+        <h2>Experience</h2>
+        <p>text text</p>
       </section>
 
-      <!-- UK nuclear power -->
-      <section>
-        <div class="chart3-description">
-          <h2>Section 3: A basic chart</h2>
-          <p>
-                description
-          </p>
-        </div>
-        <figure id="Location3"></figure>
-      </section>
-  
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-      <script>
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; 
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        let figure_2_spec = "chart_example1.vl.json";
-        vegaEmbed('#Location2', figure_2_spec);
-        let figure_3_spec = "nuclear_power.json";
-        vegaEmbed('#Location3', figure_3_spec);
-      </script>
-  
-      
     </main>
 
     <a href="#top" class="pill to-top">To the top</a>
 
   </div>
-
-   
 </body>
 </html>
