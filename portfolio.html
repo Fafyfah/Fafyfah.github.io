@@ -49,12 +49,24 @@
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
       </section>
-
+      
+      <!-- chart_example1 -->
       <section>
         <div class="chart2-description">
           <h2>Section 2: A basic chart</h2>
           <p>
                 more charts
+          </p>
+        </div>
+        <figure id="Location2"></figure>
+      </section>
+
+      <!-- UK nuclear power -->
+      <section>
+        <div class="chart3-description">
+          <h2>Section 3: A basic chart</h2>
+          <p>
+                description
           </p>
         </div>
         <figure id="Location3"></figure>
@@ -65,7 +77,9 @@
       <script>
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        let figure_3_spec = "chart_example1.vl.json";
+        let figure_2_spec = "chart_example1.vl.json";
+        vegaEmbed('#Location2', figure_2_spec);
+        let figure_3_spec = "nuclear_power.json";
         vegaEmbed('#Location3', figure_3_spec);
       </script>
   
