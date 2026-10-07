@@ -65,10 +65,15 @@ nav {
 .hero {
   text-align: center;
 }
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.2;
+}
  
 h1 {
-  font-size: 56px;
-  line-height: 1.1;
+  font-size: 32px;
+  line-height: 1.2;
   margin: 0;
 }
  
@@ -106,7 +111,7 @@ h2 {
   font-size: 22px;
 }
  
-section p {
+.about p {
   margin: 12px 0 0 32px;     /* indents the text under the title */
   font-size: 18px;
 }
@@ -116,6 +121,72 @@ section p {
   width: 16px;
   height: 16px;
   border-radius: 50%;
+}
+
+/* Project pages
+   Each box is a link (<a>), so the whole box is clickable. */
+.project-box {
+  display: flex;             /* lets us center the text easily */
+  align-items: center;       /* vertical centering */
+  justify-content: center;   /* horizontal centering */
+  height: 88px;
+  margin: 40px 0;
+  border: 3px solid black;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;     /* removes the default link underline */
+  color: black;
+}
+ 
+/* Small feedback when the mouse is over a box */
+.project-box:hover {
+  background: var(--footer);
+}
+
+/* Portfolio page */
+
+/* A line above every section that comes after another section */
+section + section {
+  border-top: 1px solid #ddd;
+  padding-top: 32px;
+}
+
+/* A wider page */
+main.wide {
+  max-width: 960px;
+}
+
+.intro {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Grid = 2 equal columns. Charts fill them left to right. */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.chart {
+  min-width: 0;          /* stops a wide chart from stretching the column */
+}
+
+.chart figure {
+  margin: 12px 0;
+  overflow-x: auto;      /* scrolls sideways if a chart is too wide */
+}
+
+.credit {
+  font-size: 12px;
+}
+
+/* On phones, stack the charts in one column */
+@media (max-width: 700px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
 }
  
 /* Footer */

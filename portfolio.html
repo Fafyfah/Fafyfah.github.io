@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Name</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>PP434 Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -17,61 +14,75 @@
   
 </head>
   
-<body id="top">
-  <div class="page-frame">
+<body>
 
-    <nav class="navbar">
-      <a href="index.html" class="pill">HOME</a>
-      <a href="portfolio.html" class="pill active">Portfolio</a>
-      <a href="projects.html" class="pill">Projects</a>
-      <a href="https://github.com/Fafyfah" class="pill" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+  <!-- navigation -->
+  <nav>
+    <a href="index.html" class="pill yellow">HOME</a>
+    <a href="projects.html" class="pill red current">Projects</a>
+    <a href="https://github.com/fafyfah" class="pill green">GitHub</a>
+  </nav>
 
-    <main style="flex: 1;">
+  <main class="wide">
 
-      <h1 class="big">
-        PP434 - Portfolio
-      </h1>
-  
-      <h3 class="small"> 
-        This page is the portfolio for PP434 class.  
-      </h3>
+  <h1>PP434 - Portfolio</h1>
+  <p class="intro">This page is the portfolio for PP434 class.</p>
 
-      <section>
-        <div class="chart1-description">
-          <h2>Week 1: A basic chart</h2>
-          <p>
-                Upload 3 basic charts from somewhere.
-          </p>
-        </div>
+  <!-- Week 1 -->
+  <section>
+    <h2>Week 1: A basic chart</h2>
+    <p>Upload 3 basic charts from somewhere.</p>
 
+    <div class="charts">
+
+      <div class="chart">
         <h4>Chart A: Food-related Emissions</h4>
         <p>description</p>
         <figure id="Location1"></figure>
-        <p>credit</p>
+        <p class="credit">credit</p>
+      </div>
 
+      <div class="chart">
         <h4>Chart B: Decades of US Inflation Volatility</h4>
         <p>description</p>
         <figure id="Location2"></figure>
-        <p>credit</p>
+        <p class="credit">credit</p>
+      </div>
 
+      <div class="chart">
         <h4>Chart C: Nuclear Power</h4>
         <p>description</p>
         <figure id="Location3"></figure>
-        <p>credit</p>
-      </section>
+        <p class="credit">credit</p>
+      </div>
 
-      <script>
-        vegaEmbed('#Location1', "food_co2.json")
-        vegaEmbed('#Location2', "chart_example1.vl.json");
-        vegaEmbed('#Location3', "nuclear_power.json");
-      </script>
+    </div>
+  </section>
+
+  <!-- Week 2 -->
+  <section>
+    <h2>Week 2: tbc</h2>
+    <p>tbc</p>
+
+
+  </section>
+
+  <script>
+    vegaEmbed('#Location1', "food_co2.json")
+    vegaEmbed('#Location2', "chart_example1.vl.json");
+    vegaEmbed('#Location3', "nuclear_power.json");
+  </script>
       
-    </main>
+  </main>
 
-    <a href="#top" class="pill to-top">To the top</a>
-
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <strong>Contact</strong>
+    <ul>
+      <li><a href="mailto:a.rinnanont@lse.ac.uk">mail</a></li>
+      <li><a href="https://www.linkedin.com/in/your-name">linkedin</a></li>
+    </ul>
+  </footer>
 
    
 </body>
