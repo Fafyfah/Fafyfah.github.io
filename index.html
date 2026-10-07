@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Name — Website</title>
+  <title>Apichaya — Website</title>
 
   <!-- Google Font: Poppins, a bold geometric sans-serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,49 +12,54 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
-  <div class="page-frame">
+<body>
+  
+  <!-- navigation -->
+  <nav>
+    <a href="index.html" class="pill yellow">HOME</a>
+    <a href="projects.html" class="pill red">Projects</a>
+    <a href="https://github.com/fafyfah" class="pill green">GitHub</a>
+  </nav>
 
-    <!-- navigation -->
-    <nav class="navbar">
-      <a href="index.html" class="pill active">Home</a>
-      <a href="portfolio.html" class="pill">Portfolio</a>
-      <a href="projects.html" class="pill">Projects</a>
-      <a href="https://github.com/fafyfah" class="pill" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+  <main>
+    <!-- INTRO -->
+    <p class="hello">Hello World,</p>
+ 
+    <header class="hero">
+      <h1>I’M <span class="blue">FAH</span> !</h1>
+      <p class="fullname">Apichaya Rinnanont</p>
+      <!-- <p class="role"><span class="orange">DATA SCIENCE</span> STUDENT</p> -->
+      <p class="keyword"><span class="orange">DSPP</span>
+    </header>
+ 
+    <p class="description">Description</p>
 
-    <main class="home-layout">
+    <!-- SECTIONS -->
+    <section>
+      <h2><span class="dot red"></span>SKILLS</h2>
+      <p>Text</p>
+    </section>
+ 
+    <section>
+      <h2><span class="dot yellow"></span>EDUCATIONS</h2>
+      <p>Text</p>
+    </section>
+ 
+    <section>
+      <h2><span class="dot green"></span>EXPERIENCE</h2>
+      <p>Text</p>
+    </section>
+ 
+  </main>
 
-      <!-- profile card -->
-      <aside class="profile-card">
-        <div class="avatar"></div>
-        <!-- img src="profile.jpg" alt="profile photo" class="avatar" -->
-        <p class="profile-name">FAH</p>
-        <p class="profile-name">Apichaya Rinnanont</p>
-        <p class="profile-desc">description</p>
-        <p class="profile-contact">a.rinnanont@lse.ac.uk</p>
-        <p class="example"> Just type something really long long long as an examle hahahahahhahahhahahahhahahha</p>
-      </aside>
-
-      <!-- main content -->
-      <section class="intro">
-        <h1>Data Science</h1>
-        <p>text text text</p>
-
-        <h2>Skills</h2>
-        <p>Python, machine learning, data visualization etc.</p>
-
-        <h2>Education</h2>
-        <p>text text</p>
-
-        <h2>Experience</h2>
-        <p>text text</p>
-      </section>
-
-    </main>
-
-    <a href="#top" class="pill to-top">To the top</a>
-
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <strong>Contact</strong>
+    <ul>
+      <li><a href="a.rinnanont@lse.ac.uk">mail</a></li>
+      <li><a href="linkedin">linkedin</a></li>
+    </ul>
+  </footer>
+     
 </body>
 </html>
