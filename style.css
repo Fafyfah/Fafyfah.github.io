@@ -201,6 +201,18 @@ footer ul {
   margin: 4px 0 0;
   padding-left: 18px;
 }
+
+/* keep footer at the bottom */
+body {
+  min-height: 100vh;        /* tall as the screen */
+  display: flex;
+  flex-direction: column;   /* stack nav, main, footer vertically */
+}
+
+main {
+  flex: 1;                  /* main takes all the leftover space */
+  width: 100%;              /* main keeps its width in a flex column */
+}
  
 /* Color helper
    Small classes you can add to any element to color it. */
