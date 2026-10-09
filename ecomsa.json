@@ -4,8 +4,8 @@
     "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/ECOMSA.csv"
   },
   "title": {"text": "E-Commerce Retail Sales Growth 2000-2026"},
-  "width": 500,
-  "height": 300,
+  "width": 300,
+  "height": 200,
   "mark": {"type": "line", "color": "red"},
   "encoding": {
     "x": {"field": "date", "type": "temporal"},
