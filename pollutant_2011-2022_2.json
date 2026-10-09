@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Comparing 5 pollutant releases 2011-2022",
+    "subtitle": ["Rebased, 2011 = 100. Source: OECD Centre for PRTR Data."],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitlePadding": 5,
+    "offset": 11,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/pollutant_2011_2022.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Nitrogen oxides",
+        "Ammonia",
+        "Carbon monoxide",
+        "Carbon dioxide",
+        "Methane"
+      ],
+      "as": ["Pollutant", "Value"]
+    }
+  ],
+  "height": 100,
+  "width": 120,
+  "mark": {"type": "line", "color": "green", "strokeWidth": 2},
+  "encoding": {
+    "x": {
+      "field": "years",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {"field": "Value", "type": "quantitative", "title": null},
+    "facet": {
+      "field": "Pollutant",
+      "columns": 3,
+      "title": null,
+      "header": {"labelFontWeight": "bold", "labelPadding": 5}
+    },
+    "color": {
+      "condition": {"test": "datum.Pollutant === 'Ammonia'", "value": "red"}
+    }
+  },
+  "resolve": {"scale": {"y": "independent"}, "axis": {"x": "independent"}},
+  "config": {}
+}
