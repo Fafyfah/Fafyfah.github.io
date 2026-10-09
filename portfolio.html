@@ -73,6 +73,14 @@
         <p class="credit">Data source: https://fred.stlouisfed.org/series/ECOMSA</p>
       </div>
 
+      <div class="chart">
+        <h4>Chart B: PRTR Pollutant releases</h4>
+        <p>description</p>
+        <figure id="Location5"></figure>
+        <p class="credit">Data source: https://www.oecd.org/en/topics/monitoring-and-preventing-industrial-pollution.html</p>
+      </div>
+
+
       
     </div>
   </section>
@@ -83,6 +91,7 @@
     vegaEmbed('#Location3', "nuclear_power.json");
     // week 2
     vegaEmbed('#Location4', "ecomsa.json");
+    vegaEmbed('#Location5',"pollutant_2011-2022_2.json");
   </script>
       
   </main>
