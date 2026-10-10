@@ -66,18 +66,34 @@
 
     <div class="charts">
       
-      <div class="chart">
+      <!-- <div class="chart">
         <h4>Chart A: E-Commerce Retail Sales</h4>
         <p>description</p>
         <figure id="Location4"></figure>
         <p class="credit">Data source: https://fred.stlouisfed.org/series/ECOMSA</p>
+      </div> -->
+
+      <div class="chart">
+        <h4>Tyre Strategies of the Top 5 at the 2026 British GP</h4>
+        <p>This stacked bar chart shows how many laps each of the top five finishers ran on each tyre compound at Silverstone. 
+          Most of them switched to softs for the final laps after a late Virtual Safety Car, triggered by Max Verstappen’s crash at Stowe corner,
+          Except George Russell who stayed on his original one-stop strategy.</p>
+        <figure id="Location4"></figure>
+        <p class="credit">Data source: FastF1 Python library,
+          <a href="https://github.com/theOehrly/Fast-F1" target="_blank" rel="noopener">https://github.com/theOehrly/Fast-F1</a>.
+          Race data from Formula 1 live timing, accessed 10 October 2026.</p>
       </div>
 
       <div class="chart">
-        <h4>Chart B: PRTR Pollutant releases</h4>
-        <p>description</p>
+        <h4>Trends in Five Pollutant Releases, 2011-2022</h4>
+        <p>This chart compares the releases of five pollutants changed between 2011 and 2022, using data from the OECD PRTR Data Explorer. 
+          Values are rebased to 2011 = 100, so the chart shows relative change, not absolute amounts. Nitrogen oxides fell the most, so are carbon dioxide, carbon monoxide and methane. 
+          Ammonia is the exception with increasing trend until 2018, although it has since fallen, it was still above its 2011 level in 2022.</p>
+        <p>The data covers air and water releases reported to seven national and regional PRTRs (39 countries) and does not include releases to land or all pollutants and registers.</p>
         <figure id="Location5"></figure>
-        <p class="credit">Data source: https://www.oecd.org/en/topics/monitoring-and-preventing-industrial-pollution.html</p>
+        <p class="credit">Source: OECD, 
+          <a href="https://www.oecd.org/en/topics/monitoring-and-preventing-industrial-pollution.html" target="_blank" rel="noopener">Monitoring and preventing industrial pollution</a> 
+          (OECD PRTR Data Explorer), accessed 9 October 2026.</p>
       </div>
 
 
@@ -90,7 +106,7 @@
     vegaEmbed('#Location2', "chart_example1.vl.json");
     vegaEmbed('#Location3', "nuclear_power.json");
     // week 2
-    vegaEmbed('#Location4', "ecomsa.json");
+    vegaEmbed('#Location4', "figure/tyre_strat.json");
     vegaEmbed('#Location5',"pollutant_2011-2022_2.json");
   </script>
       
