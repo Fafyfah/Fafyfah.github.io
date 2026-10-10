@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "#111111",
+  "config": {
+    "title": {"color": "white", "subtitleColor": "#aaaaaa"},
+    "axis": {
+      "labelColor": "#cccccc",
+      "titleColor": "white",
+      "domainColor": "#666666",
+      "tickColor": "#666666",
+      "gridColor": "#333333",
+      "titlePadding": 12
+    },
+    "legend": {"labelColor": "#cccccc", "titleColor": "white"}
+  },
+  "title": {
+    "text": "2026 British GP: Tyre Strategies",
+    "subtitle": "Top 5 finishers, compound used by lap. Source: FastF1, based on official F1 timing data.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "offset": 15,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/figure/tyres_strat.csv"
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Driver",
+        "oneOf": ["LEC", "RUS", "HAM", "NOR", "HAD"]
+      }
+    },
+    {
+      "aggregate": [{"op": "count", "as": "Laps"}],
+      "groupby": ["Driver", "Compound"]
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "Driver",
+      "title": "Drivers",
+      "type": "nominal",
+      "sort": ["LEC", "RUS", "HAM", "NOR", "HAD"]
+    },
+    "x": {
+      "field": "Laps",
+      "type": "quantitative",
+      "stack": "zero",
+      "title": "Laps",
+      "scale": {"domain": [0, 52]}
+    },
+    "order": {"field": "Compound", "type": "nominal"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "stroke": "#111111"},
+      "encoding": {
+        "color": {
+          "field": "Compound",
+          "type": "nominal",
+          "scale": {
+            "domain": ["SOFT", "MEDIUM", "HARD"],
+            "range": ["#e8002d", "#ffd12e", "#f0f0f0"]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -4,
+        "color": "black",
+        "fontWeight": "bold"
+      },
+      "encoding": {"text": {"field": "Laps", "type": "quantitative"}}
+    }
+  ]
+}
