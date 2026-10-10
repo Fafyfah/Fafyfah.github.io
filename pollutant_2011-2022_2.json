@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Comparing 5 pollutant releases 2011-2022",
-    "subtitle": ["Rebased, 2011 = 100. Source: OECD Centre for PRTR Data."],
+    "text": "Most Pollutant Releases Fell Between 2011-2022. Ammonia Did Not",
+    "subtitle": ["Rebased, 2011 = 100. Source: OECD PRTR Data Explorer."],
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "subtitlePadding": 5,
