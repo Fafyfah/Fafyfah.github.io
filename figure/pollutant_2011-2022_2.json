@@ -11,7 +11,7 @@
     "color": "black"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/pollutant_2011_2022.csv"
+    "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/figure/pollutant_2011_2022.csv"
   },
   "transform": [
     {
