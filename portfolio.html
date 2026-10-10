@@ -30,30 +30,30 @@
 
   <!-- Week 1 -->
   <section>
-    <h2>Week 1: A basic chart</h2>
-    <p>Upload 3 basic charts from somewhere.</p>
+    <h2>Week 1: Embedding existing charts</h2>
+    <p>Hosting three existing charts from various sources.</p>
 
     <div class="charts">
 
       <div class="chart">
         <h4>Chart A: Food-related Emissions</h4>
-        <p>description</p>
+        <p>A chart showing greenhouse gas emissions per kg of food, split by supply chain stage.</p>
         <figure id="Location1"></figure>
-        <p class="credit">credit</p>
+        <p class="credit"><a href="https://rdeconomist.github.io/library" target="_blank" rel="noopener">source</p>
       </div>
 
       <div class="chart">
         <h4>Chart B: Decades of US Inflation Volatility</h4>
-        <p>description</p>
+        <p>An interactive chart of the U.S. annual inflation rate.</p>
         <figure id="Location2"></figure>
-        <p class="credit">credit</p>
+        <p class="credit"><a href="https://rdeconomist.github.io/library" target="_blank" rel="noopener">source</p>
       </div>
 
       <div class="chart">
-        <h4>Chart C: Nuclear Power</h4>
-        <p>description</p>
+        <h4>Chart C: UK Nuclear Output Changes</h4>
+        <p>A chart showing UK nuclear power output over time, built with the Economics Observatory Data Hub</p>
         <figure id="Location3"></figure>
-        <p class="credit">credit</p>
+        <p class="credit"><a href="https://www.economicsobservatory.com/explore" target="_blank" rel="noopener">Economics Observatory Data Hub</p>
       </div>
 
     </div>
@@ -77,7 +77,7 @@
         <h4>Tyre Strategies of the Top 5 at the 2026 British GP</h4>
         <p>This stacked bar chart shows how many laps each of the top five finishers ran on each tyre compound at Silverstone. 
           Most of them switched to softs for the final laps after a late Virtual Safety Car, triggered by Max Verstappen’s crash at Stowe corner,
-          Except George Russell who stayed on his original one-stop strategy.</p>
+          except George Russell who stayed on his original one-stop strategy.</p>
         <figure id="Location4"></figure>
         <p class="credit">Data source: FastF1 Python library,
           <a href="https://github.com/theOehrly/Fast-F1" target="_blank" rel="noopener">https://github.com/theOehrly/Fast-F1</a>.
@@ -86,9 +86,9 @@
 
       <div class="chart">
         <h4>Trends in Five Pollutant Releases, 2011-2022</h4>
-        <p>This chart compares the releases of five pollutants changed between 2011 and 2022, using data from the OECD PRTR Data Explorer. 
-          Values are rebased to 2011 = 100, so the chart shows relative change, not absolute amounts. Nitrogen oxides fell the most, so are carbon dioxide, carbon monoxide and methane. 
-          Ammonia is the exception with increasing trend until 2018, although it has since fallen, it was still above its 2011 level in 2022.</p>
+        <p>This chart compares how releases of five pollutants changed between 2011 and 2022. The values are rebased to 2011 = 100, so the chart shows relative change.
+          Four of the five pollutants ended 2022 below their 2011 level, with nitrogen oxides falling the most.
+          Ammonia is the exception: it rose until 2018 and, although it has since fallen, was still above its 2011 level in 2022.</p>
         <p>The data covers air and water releases reported to seven national and regional PRTRs (39 countries) and does not include releases to land or all pollutants and registers.</p>
         <figure id="Location5"></figure>
         <p class="credit">Source: OECD, 
@@ -96,18 +96,16 @@
           (OECD PRTR Data Explorer), accessed 9 October 2026.</p>
       </div>
 
-
-      
     </div>
   </section>
 
   <script>
-    vegaEmbed('#Location1', "food_co2.json");
-    vegaEmbed('#Location2', "chart_example1.vl.json");
-    vegaEmbed('#Location3', "nuclear_power.json");
+    vegaEmbed('#Location1', "figure/food_co2.json");
+    vegaEmbed('#Location2', "figure/chart_example1.vl.json");
+    vegaEmbed('#Location3', "figure/nuclear_power.json");
     // week 2
     vegaEmbed('#Location4', "figure/tyre_strat.json");
-    vegaEmbed('#Location5',"pollutant_2011-2022_2.json");
+    vegaEmbed('#Location5',"figure/pollutant_2011-2022_2.json");
   </script>
       
   </main>
