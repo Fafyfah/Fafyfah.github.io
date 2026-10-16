@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {"text": "Change in Mean Sea Levels: Andaman", "fontSize": 16},
+  "width": 600,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/figure/andaman_sea_d.csv"
+  },
+  "transform": [{"filter": "datum.Indicator != 'Trend'"}],
+  "encoding": {
+    "x": {"field": "Date", "type": "temporal", "title": null},
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Change in mean sea level [mm]"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "opacity": 0.5},
+      "encoding": {
+        "color": {
+          "datum": "Satellite readings",
+          "scale": {
+            "domain": ["Satellite readings", "Smoothed trend"],
+            "range": ["#4C78A8", "#C0392B"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "none",
+            "direction": "horizontal",
+            "legendX": 185,
+            "legendY": -25,
+            "symbolOpacity": 1,
+            "symbolStrokeWidth": 3,
+            "labelFontSize": 12
+          }
+        }
+      }
+    },
+    {
+      "transform": [{"loess": "Value", "on": "Date", "bandwidth": 0.2}],
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {"color": {"datum": "Smoothed trend"}}
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": "Source: NOAA Laboratory for Satellite Altimetry, via IMF Climate Change Indicators Dashboard.",
+        "align": "right",
+        "fontSize": 11,
+        "fontWeight": "normal",
+        "color": "#555555"
+      },
+      "encoding": {"x": {"value": 600}, "y": {"value": 340}}
+    }
+  ],
+  "config": {}
+}
