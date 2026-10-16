@@ -114,6 +114,24 @@
       <p></p>
     </div>
 
+    <!-- Week 4 -->
+  <section>
+    <h2>Week 4: Replication</h2>
+    <p>Re-create, then improve, someone else’s chart</p>
+
+    <div class="chart">
+      <h4>Original chart</h4>
+      <p>The original chart is “Change in Mean Sea Levels,” filter with Andaman sea, from <li><a href="https://climatedata.imf.org/pages/climatechange-data">IMF Climate Change Indicators Dashboard</a></li>. 
+        It shows data from satellite altimeters that have monitored the same ocean surfaces since 1992 (TOPEX/Poseidon, Jason-1, Jason-2 and Jason-3).</p>
+      <img src="figure/andaman_sea.png" alt="IMF chart: Change in Mean Sea Levels" style="max-width: 100%;">
+    </div>
+
+    <div class="chart">
+      <h4>Replication</h4>
+      <p>Improved the chart by combining all satellites into one series since they measure the same things, faded the noisy readings, and added a smoothed trend line to make the overall rise clear.</p>
+      <figure id="Location8"></figure>
+    </div>
+
   </section>
     
 
@@ -127,6 +145,8 @@
     // week 3
     // vegaEmbed('#Location6', "figure/pe_ratio_chart.json");
     // vegaEmbed('#Location7',"figure/shiller_pe_chart.json");
+    // week 4
+    vegaEmbed('#Location8', "figure/andaman.json");
   </script>
       
   </main>
