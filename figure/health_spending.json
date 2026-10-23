@@ -10,6 +10,7 @@
   },
   "title": {
     "text": "In 2023, US health spending was 1.5 times the UK's",
+    "fontSize": 16,
     "subtitle": [
       "Current health expenditure (% of GDP), 2000-2023. Source: World Bank"
     ],
@@ -21,6 +22,8 @@
     "anchor": "start",
     "color": "black"
   },
+  "width": 300,
+  "height": 300,
   "description": "Current health expenditure (% of GDP): UK vs. World (World Bank).",
   "data": {
     "url": "https://api.worldbank.org/v2/country/gb;us/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=500",

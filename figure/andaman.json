@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {"text": "Change in Mean Sea Levels: Andaman", "fontSize": 16, "offset": 30},
-  "width": "container",
+  "width": 500,
   "height": 300,
   "autosize": {"type": "fit", "contains": "padding"},
   "data": {"url": "https://raw.githubusercontent.com/Fafyfah/Fafyfah.github.io/refs/heads/main/figure/andaman_sea_d.csv"},

@@ -10,6 +10,7 @@
   },
   "title": {
     "text": "In 2024, UK life expectancy was 2.5 years longer than the US’s",
+    "fontSize": 16,
     "subtitle": ["Life expectancy at birth, 2000-2024. Source: World Bank"],
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
@@ -19,7 +20,8 @@
     "anchor": "start",
     "color": "black"
   },
-  "description": " World Bank.",
+  "width": 300,
+  "height": 300,
   "data": {
     "url": "https://api.worldbank.org/v2/country/gb;us/indicator/SP.DYN.LE00.IN?format=json&per_page=100",
     "format": {"type": "json", "property": "1"}
