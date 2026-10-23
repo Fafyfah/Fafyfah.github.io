@@ -27,6 +27,7 @@ header.top {
 header.top nav {
   margin: 0;
   padding: 0;
+  gap: clamp(16px, 8vw, 120px);
 }
 
 body {
