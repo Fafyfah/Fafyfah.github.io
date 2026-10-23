@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "axis": {"gridColor": "#dddddd", "gridOpacity": 0.4},
+    "legend": {
+      "orient": "top",
+      "direction": "horizontal",
+      "layout": {"anchor": "middle"}
+    }
+  },
+  "title": {
+    "text": "In 2024, UK life expectancy was 2.5 years longer than the US’s",
+    "subtitle": ["Life expectancy at birth, 2000-2024. Source: World Bank"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitlePadding": 5,
+    "subtitleColor": "gray",
+    "offset": 11,
+    "anchor": "start",
+    "color": "black"
+  },
+  "description": " World Bank.",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/gb;us/indicator/SP.DYN.LE00.IN?format=json&per_page=100",
+    "format": {"type": "json", "property": "1"}
+  },
+  "transform": [
+    {"filter": "datum.value != null && toNumber(datum.date) >= 2000"},
+    {"calculate": "datetime(toNumber(datum.date), 0, 1)", "as": "year"}
+  ],
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": null},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Life expectancy at birth (years)",
+      "scale": {"zero": false},
+      "axis": {"titlePadding": 15}
+    },
+    "color": {
+      "field": "country.value",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": ["United States", "United Kingdom"],
+        "range": ["#DB5671", "#5699DB"]
+      },
+      "legend": {"orient": "top"}
+    }
+  }
+}

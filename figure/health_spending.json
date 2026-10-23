@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "config": {
+    "axis": {"gridColor": "#dddddd", "gridOpacity": 0.4},
+    "legend": {
+      "orient": "top",
+      "direction": "horizontal",
+      "layout": {"anchor": "middle"}
+    }
+  },
+  "title": {
+    "text": "In 2023, US health spending was 1.5 times the UK's",
+    "subtitle": [
+      "Current health expenditure (% of GDP), 2000-2023. Source: World Bank"
+    ],
+    "subtitleColor": "gray",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitlePadding": 5,
+    "offset": 11,
+    "anchor": "start",
+    "color": "black"
+  },
+  "description": "Current health expenditure (% of GDP): UK vs. World (World Bank).",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/gb;us/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=500",
+    "format": {"type": "json", "property": "1"}
+  },
+  "transform": [
+    {
+      "filter": "datum.value != null && (toNumber(datum.date) >= 2000 && toNumber(datum.date) <= 2023)"
+    },
+    {"calculate": "datetime(toNumber(datum.date), 0, 1)", "as": "year"}
+  ],
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": null},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Health spending (% of GDP)",
+      "scale": {"zero": false},
+      "axis": {"titlePadding": 10}
+    },
+    "color": {
+      "field": "country.value",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": ["United States", "United Kingdom"],
+        "range": ["#DB5671", "#5699DB"]
+      },
+      "legend": {"orient": "top"}
+    }
+  }
+}
