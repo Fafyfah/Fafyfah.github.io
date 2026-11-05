@@ -20,16 +20,18 @@
   <header class="top">
     <!-- navigation -->
     <nav>
-      <a href="index.html" class="pill yellow current">HOME</a>
-      <a href="projects.html" class="pill red">Projects</a>
+      <a href="index.html" class="pill yellow">HOME</a>
+      <a href="projects.html" class="pill red current">Projects</a>
       <a href="https://github.com/fafyfah" class="pill green">GitHub</a>
     </nav>
   </header>
 
   <main class="wide">
 
-  <h1>PP434 - Portfolio</h1>
-  <p class="intro">This page is the portfolio for PP434 class.</p>
+  <section>
+     <h1>PP434 - Portfolio</h1>
+     <p class="intro">This page is the portfolio for PP434 class.</p>
+  </section>
 
   <!-- Week 1 -->
   <section>
@@ -144,6 +146,46 @@
       </div>
     </div>
   </section>
+
+  <!-- Week 5 -->
+   <section>
+    <h2>Week 5: Accessing data with API and web scraper</h2>
+    <p>Automated visualisations with API and data scraping.</p>
+
+    <div class="charts">
+      <!-- API task  -->
+       <div class="chart">
+        <h4>API task</h4>
+        <figure id="Location9"></figure>
+        <p>Base url: <a href="https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD;SH.DTH.NCOM.ZS?source=2&format=json&date=2019&per_page=1000" target="_blank" rel="noopener">https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD;SH.DTH.NCOM.ZS?source=2&format=json&date=2021&per_page=1000</a></p>
+        <p>Elements needed to call the data: <br>
+          - NY.GDP.PCAP.CD for GDP per capita (current US$) <br>
+          - SH.DTH.NCOM.ZS for Cause of death, by non-communicable diseases (% of total)
+          - source=2 <br>
+          - format=json <br>
+          - date=2019 <br>
+          - per_page=1000
+        </p>
+        <p>The data was returned in JSON, in clean format (?)</p>
+        <p class="credit">Data source: World Bank, 
+          <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noopener">GDP per capita (current US$)</a> 
+          and <a href="https://data.worldbank.org/indicator/SH.DTH.NCOM.ZS" target="=_blank" rel="noopener">Cause of death, by non-communicable diseases (% of total)</a>, accessed 28 October 2026.</p>
+       </div>
+
+      <!-- Data scrapping task -->
+       <div class="chart">
+        <h4>Data scrapping task</h4>
+        <p><b>Link to Google Colab</b>: <a href="https://colab.research.google.com/drive/18MNXz7i4plqO0YF1sMMdWU5nL1ATrHcr?usp=sharing" target="=_blank" rel="noopener">Workbook</a></p>
+        <p><b>Comment</b>: Attempt to web scrapping the tables from <a href="https://www.premierleague.com/en" target="=_blank" rel="noopener">www.premierleague.com/en</a>
+          but the page load data via JavaScript so I have to find the hidden JSON endpoint in DevTools’ Network tab. The data was in wide format.</p>
+         <img src="figure/pl_positions.png" alt="premierleague position changes" style="width: 100%; height: auto;">
+        
+        <p></p>
+       </div>
+
+
+    </div>
+   </section>
     
 
   <script>
@@ -158,6 +200,9 @@
     vegaEmbed('#Location7',"figure/life_expect.json");
     // week 4
     vegaEmbed('#Location8', "figure/andaman.json");
+    // week 5
+    vegaEmbed('#Location9', "figure/wealth_ncd.json");
+    // vegaEmbed('#Location10', "");
   </script>
       
   </main>
