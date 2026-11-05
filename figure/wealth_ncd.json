@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "GDP per capita vs share of deaths from non-communicable diseases, by country and region, 2021. Live data from the World Bank API.",
+  "title": {
+    "text": "Wealth and deaths from non-communicable diseases",
+    "subtitle": [
+      "Share of deaths from NCDs vs GDP per capita, 2019, by World Bank region.",
+      "Source: World Bank"
+    ],
+    "anchor": "start",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitlePadding": 5,
+    "subtitleColor": "gray",
+    "offset": 11,
+    "color": "black"
+  },
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD;SH.DTH.NCOM.ZS?source=2&format=json&date=2019&per_page=1000",
+    "format": {"type": "json", "property": "1"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.indicator.id == 'NY.GDP.PCAP.CD' ? 'gdp' : 'ncd'",
+      "as": "ind"
+    },
+    {"calculate": "datum.country.value", "as": "country"},
+    {
+      "pivot": "ind",
+      "value": "value",
+      "groupby": ["country", "countryiso3code"]
+    },
+    {
+      "lookup": "countryiso3code",
+      "from": {
+        "data": {
+          "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+          "format": {"type": "json", "property": "1"}
+        },
+        "key": "id",
+        "fields": ["region"]
+      }
+    },
+    {"filter": "isValid(datum.region) && datum.region.value != 'Aggregates'"},
+    {"filter": "isValid(datum.gdp) && isValid(datum.ncd)"},
+    {"calculate": "trim(datum.region.value)", "as": "regionName"}
+  ],
+  "mark": {
+    "type": "circle",
+    "size": 80,
+    "opacity": 0.75,
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "height": 300,
+  "width": 300,
+  "encoding": {
+    "x": {
+      "field": "gdp",
+      "type": "quantitative",
+      "scale": {"type": "log", "domain": [100, 200000]},
+      "title": "GDP per capita (current US$, log scale)"
+    },
+    "y": {
+      "field": "ncd",
+      "type": "quantitative",
+      "scale": {"domain": [0, 100]},
+      "title": "Deaths from NCDs (% of all deaths)"
+    },
+    "tooltip": [
+      {"field": "country", "title": "Country"},
+      {"field": "regionName", "title": "Region"},
+      {"field": "gdp", "title": "GDP per capita (US$)", "format": ",.0f"},
+      {"field": "ncd", "title": "NCD deaths (%)", "format": ".1f"}
+    ],
+    "color": {
+      "field": "regionName",
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"},
+      "legend": {"orient": "bottom", "columns": 2, "labelLimit": 100},
+      "title": "Region"
+    }
+  },
+  "config": {}
+}
